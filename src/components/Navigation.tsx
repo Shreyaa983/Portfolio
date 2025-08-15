@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 
 interface NavigationProps {
@@ -17,6 +16,11 @@ const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
     { command: '$ ./contact.sh', section: 'contact' }
   ];
 
+  const handleNavClick = (section: string) => {
+    document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+    onSectionChange(section);
+  };
+
   return (
     <>
       {/* Desktop Navigation */}
@@ -26,10 +30,10 @@ const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
             {navItems.map((item) => (
               <button
                 key={item.section}
-                onClick={() => onSectionChange(item.section)}
+                onClick={() => handleNavClick(item.section)}
                 className={`command-button ${
-                  activeSection === item.section 
-                    ? 'bg-primary/20 text-primary' 
+                  activeSection === item.section
+                    ? 'bg-primary/20 text-primary'
                     : 'hover:text-primary'
                 }`}
               >
@@ -49,7 +53,7 @@ const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
           <span className="terminal-prompt">{'>'}</span>
           <span className="ml-2">_</span>
         </button>
-        
+
         {isMenuOpen && (
           <div className="absolute top-full right-0 mt-2 terminal-card min-w-[200px]">
             <div className="space-y-2">
@@ -57,12 +61,12 @@ const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
                 <button
                   key={item.section}
                   onClick={() => {
-                    onSectionChange(item.section);
+                    handleNavClick(item.section);
                     setIsMenuOpen(false);
                   }}
                   className={`block w-full text-left command-button ${
-                    activeSection === item.section 
-                      ? 'bg-primary/20 text-primary' 
+                    activeSection === item.section
+                      ? 'bg-primary/20 text-primary'
                       : 'hover:text-primary'
                   }`}
                 >
