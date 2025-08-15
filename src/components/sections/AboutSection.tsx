@@ -3,11 +3,7 @@ import TerminalWindow from '../TerminalWindow';
 
 const AboutSection = () => {
   return (
-     <section
-      id="about" // 👈 Added for scroll targeting
-      className="min-h-screen flex items-center justify-center p-4"
-    >
-    <section className="min-h-screen flex items-center justify-center p-4">
+    <section id="about"  className="min-h-screen flex items-center justify-center p-4">
       <div className="max-w-4xl w-full">
         <TerminalWindow title="about.sh">
           <div className="space-y-4">
@@ -53,7 +49,6 @@ const AboutSection = () => {
           </div>
         </TerminalWindow>
       </div>
-    </section>
     </section>
   );
 };

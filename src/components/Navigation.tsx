@@ -17,16 +17,9 @@ const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
   ];
 
   const handleNavClick = (section: string) => {
-  const el = document.getElementById(section);
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    // fallback for mobile
-    const top = el.getBoundingClientRect().top + window.pageYOffset - 80; 
-    window.scrollTo({ top, behavior: 'smooth' });
-  }
-  onSectionChange(section);
-};
-
+    document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+    onSectionChange(section);
+  };
 
   return (
     <>

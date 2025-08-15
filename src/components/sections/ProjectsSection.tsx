@@ -60,7 +60,7 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center p-4">
+    <section id="projects" className="min-h-screen p-4 md:flex md:items-center md:justify-center">
       <div className="max-w-4xl w-full">
         <TerminalWindow title="projects/">
           <div className="space-y-4">

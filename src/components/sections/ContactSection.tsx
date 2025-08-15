@@ -100,7 +100,10 @@ const ContactSection = () => {
 
   return (
 
-    <section id="contact" className="min-h-screen flex items-center justify-center p-4">
+    <section
+      id="contact"
+      className="min-h-screen p-4 md:flex md:items-center md:justify-center"
+    >
       <div className="max-w-4xl w-full">
         <TerminalWindow title="contact.sh">
           <div className="space-y-4">
@@ -110,8 +113,8 @@ const ContactSection = () => {
                 <div
                   key={index}
                   className={`mb-1 ${message.startsWith('$')
-                      ? `text-primary ${highlightIndex === index ? 'bg-primary/20 animate-pulse' : ''}`
-                      : 'text-muted-foreground'
+                    ? `text-primary ${highlightIndex === index ? 'bg-primary/20 animate-pulse' : ''}`
+                    : 'text-muted-foreground'
                     }`}
                 >
                   {message}
