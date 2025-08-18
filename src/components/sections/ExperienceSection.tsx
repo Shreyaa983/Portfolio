@@ -54,17 +54,23 @@ const experience = [
                       <div>
                         <span className="syntax-key">"company"</span>
                         <span className="syntax-bracket">: </span>
-                        <span className="syntax-string">"{job.company}"</span>,
+                        <span className="syntax-string" style={{ color: '#60a5fa' }}>
+                          "{job.company}"
+                        </span>,
                       </div>
                       <div>
                         <span className="syntax-key">"role"</span>
                         <span className="syntax-bracket">: </span>
-                        <span className="syntax-string">"{job.role}"</span>,
+                        <span className="syntax-string" style={{ color: '#60a5fa' }}>
+                          "{job.role}"
+                        </span>,
                       </div>
                       <div>
                         <span className="syntax-key">"duration"</span>
                         <span className="syntax-bracket">: </span>
-                        <span className="syntax-string">"{job.duration}"</span>,
+                        <span className="syntax-string" style={{ color: '#60a5fa' }}>
+                          "{job.duration}"
+                        </span>,
                       </div>
                       <div>
                         <span className="syntax-key">"technologies"</span>
@@ -72,7 +78,9 @@ const experience = [
                         <div className="ml-4">
                           {job.technologies.map((tech, techIndex) => (
                             <span key={techIndex}>
-                              <span className="syntax-string">"{tech}"</span>
+                              <span className="syntax-string" style={{ color: '#60a5fa' }}>
+                                "{tech}"
+                              </span>
                               {techIndex < job.technologies.length - 1 && <span className="syntax-bracket">, </span>}
                             </span>
                           ))}
@@ -82,15 +90,17 @@ const experience = [
                       <div>
                         <span className="syntax-key">"description"</span>
                         <span className="syntax-bracket">: </span>
-                        <span className="syntax-string">"{job.description}"</span>
+                        <span className="syntax-string" style={{ color: '#60a5fa' }}>
+                          "{job.description}"
+                        </span>
                       </div>
                     </div>
                     <div className="syntax-bracket">
-                      {`}`}{index < experience.length - 1 && ","}
+                      {`}`}{index < experience.length - 1 && <span style={{ color: '#60a5fa' }}>,</span>}
                     </div>
                   </div>
                 ))}
-                
+
                 <span className="syntax-bracket">]</span>
               </div>
               <div className="syntax-bracket text-lg">{`}`}</div>
