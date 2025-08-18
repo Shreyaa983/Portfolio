@@ -8,9 +8,15 @@ import SkillsSection from '../components/sections/SkillsSection';
 import ProjectsSection from '../components/sections/ProjectsSection';
 import ContactSection from '../components/sections/ContactSection';
 
+
 const Index = () => {
   const [showBoot, setShowBoot] = useState(true);
   const [activeSection, setActiveSection] = useState('about');
+
+  // Scroll to top on initial load to ensure About section is visible
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,32 +51,33 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background terminal-grid">
-      <Navigation 
-        activeSection={activeSection} 
+      <Navigation
+        activeSection={activeSection}
         onSectionChange={scrollToSection}
       />
-      
+
       <div id="about">
         <AboutSection />
       </div>
-      
+
       <div id="experience">
         <ExperienceSection />
       </div>
-      
+
       <div id="skills">
         <SkillsSection />
       </div>
-      
+
       <div id="projects">
         <ProjectsSection />
       </div>
-      
+
       <div id="contact">
         <ContactSection />
       </div>
     </div>
   );
+
 };
 
 export default Index;

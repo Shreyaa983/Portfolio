@@ -21,15 +21,15 @@ const ProjectsSection = () => {
       demo: null,
       status: "active"
     },
-    {
-      name: "eco-bin",
-      description:
-        "Smart e-waste management solution built during CodeVerse 2025 Hackathon, enabling users to locate and manage e-waste disposal points efficiently.",
-      tech: ["Golang", "REST APIs", "MySQL"],
-      github: null, // Assuming private or no repo link
-      demo: null,
-      status: "prototype"
-    },
+    // {
+    //   name: "eco-bin",
+    //   description:
+    //     "Smart e-waste management solution built during CodeVerse 2025 Hackathon, enabling users to locate and manage e-waste disposal points efficiently.",
+    //   tech: ["Golang", "REST APIs", "MySQL"],
+    //   github: null, // Assuming private or no repo link
+    //   demo: null,
+    //   status: "prototype"
+    // },
      {
       name: "sakhi-saathi",
       description:
@@ -48,19 +48,19 @@ const ProjectsSection = () => {
       demo: null,
       status: "hackathon"
     },
-    {
-      name: "college-admin-app",
-      description:
-        "College administration application built from scratch, winning Vivek Technotronix Project Competition.",
-      tech: ["Kotlin", "Jetpack Compose", "SQLite"],
-      github: null,
-      demo: null,
-      status: "completed"
-    }
+    // {
+    //   name: "college-admin-app",
+    //   description:
+    //     "College administration application built from scratch, winning Vivek Technotronix Project Competition.",
+    //   tech: ["Kotlin", "Jetpack Compose", "SQLite"],
+    //   github: null,
+    //   demo: null,
+    //   status: "completed"
+    // }
   ];
 
   return (
-    <section id="projects" className="min-h-screen p-4 md:flex md:items-center md:justify-center">
+    <section id="projects" className="py-24 p-4 md:flex md:items-center md:justify-center">
       <div className="max-w-4xl w-full">
         <TerminalWindow title="projects/">
           <div className="space-y-4">

@@ -16,9 +16,17 @@ const ContactSection = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
+const firstRender = useRef(true);
+
+useEffect(() => {
+  if (firstRender.current) {
+    firstRender.current = false;
+    return; // skip initial auto-scroll
+  }
+  scrollToBottom();
+}, [messages]);
+
+
 
   const handleCommand = (command: string) => {
     const trimmedCommand = command.trim().toLowerCase();
@@ -33,10 +41,6 @@ const ContactSection = () => {
         setMessages(prev => [
           ...prev,
           'Available commands:',
-          '  about    - Show About section',
-          '  skills   - Show Skills section',
-          '  projects - Show Projects section',
-          '  experience - Show Experience section',
           '  email    - Show email address',
           '  github   - Open GitHub profile',
           '  linkedin - Open LinkedIn profile',
@@ -45,26 +49,6 @@ const ContactSection = () => {
           '  help     - Show this help'
         ]);
         break;
-      case 'about':
-        setMessages(prev => [...prev, 'Navigating to About section...']);
-        document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-        break;
-
-      case 'skills':
-        setMessages(prev => [...prev, 'Navigating to Skills section...']);
-        document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
-        break;
-
-      case 'projects':
-        setMessages(prev => [...prev, 'Navigating to Projects section...']);
-        document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
-        break;
-
-      case 'experience':
-        setMessages(prev => [...prev, 'Navigating to Experience section...']);
-        document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' });
-        break;
-
       case 'email':
         setMessages(prev => [...prev, 'shreyashukla20042005@gmail.com']);
         break;
@@ -101,8 +85,7 @@ const ContactSection = () => {
   return (
 
     <section
-      id="contact"
-      className="min-h-screen p-4 md:flex md:items-center md:justify-center"
+      className="py-24 p-4 md:flex md:items-center md:justify-center"
     >
       <div className="max-w-4xl w-full">
         <TerminalWindow title="contact.sh">
@@ -132,7 +115,7 @@ const ContactSection = () => {
                 onChange={(e) => setInput(e.target.value)}
                 className="flex-1 bg-transparent border-none outline-none text-foreground font-mono"
                 placeholder="Enter command..."
-                autoFocus
+              // autoFocus
               />
               <button type="submit" className="command-button">
                 <Send className="w-4 h-4" />

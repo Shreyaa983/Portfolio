@@ -26,12 +26,13 @@ const BootSequence = ({ onComplete }: BootSequenceProps) => {
       }, 300);
       return () => clearTimeout(timer);
     } else if (!isComplete) {
-      const completeTimer = setTimeout(() => {
-        setIsComplete(true);
-        onComplete();
-      }, 1000);
-      return () => clearTimeout(completeTimer);
-    }
+  const completeTimer = setTimeout(() => {
+    setIsComplete(true);
+    window.scrollTo({ top: 0, behavior: "auto" }); // ensures About is first
+    onComplete();
+  }, 1000);
+  return () => clearTimeout(completeTimer);
+}
   }, [currentLine, bootLines.length, isComplete, onComplete]);
 
   return (

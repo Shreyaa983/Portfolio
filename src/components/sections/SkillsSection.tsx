@@ -21,7 +21,7 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="min-h-screen p-4 md:flex md:items-center md:justify-center">
+    <section id="skills" className="py-24 p-4 md:flex md:items-center md:justify-center">
       <div className="max-w-4xl w-full">
         <TerminalWindow title="skills.sh">
           <div className="space-y-4">
