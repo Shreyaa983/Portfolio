@@ -22,7 +22,7 @@ const experience = [
   {
     company: "CodeStorm, College Tech Club",
     role: "Senior Member - Tech Committee",
-    duration: "2024 – 2025",
+    duration: "2025",
     technologies: ["event organization", "mentoring", "technical guidance"],
     description:
       "Organized coding events, mentored junior members, and contributed to fostering a tech-driven community on campus."
